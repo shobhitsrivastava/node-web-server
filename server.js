@@ -24,9 +24,9 @@ app.use((req, res, next) => {
 
 
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-});
+// app.use ((req, res, next) => {
+//     res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -55,6 +55,13 @@ app.get('/about', (req, res) => {
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: "Bad request."
+    });
+});
+
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'Project',
+        welcomeMessage: 'This is the projects page.'
     });
 });
 
